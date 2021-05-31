@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a,b,c,d=1,e,i,n,m,s=0;
+    cin>>a>>b;
+	if(a>b)
+    {
+    	i=a;
+    	a=b;
+    	b=i;
+    }
+	if(a<10)
+    	a=10;
+    while (a<=b)
+    {
+        c=a%100;
+        while(d<=a)
+        {
+            d=d*10;
+        }
+        d=d/100;
+        e=a/d;
+
+        n=e-c;
+        if(n!=0)
+        {
+            if(a%n==0)
+            {
+                s++;
+                m=a;
+            }
+        }
+
+        a++;
+    }
+	if(s==0)
+    	cout<<"00";
+    else
+    	cout<<s<<" "<<m;
+
+}
