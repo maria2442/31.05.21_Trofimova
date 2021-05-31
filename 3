@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+int sum,m,l;
+string o;
+void fun(string a,string &w,int n)
+{
+
+    int i,l,z;
+    if(n==w.size())
+    {
+    while(i<m)
+        {
+            if(w[i]=='A')
+                sum++;
+            if(w[i]=='I')
+                sum++;
+        }
+        if(sum>=2)
+            l--;
+            if(l==0)
+            {
+                o=w;
+            }
+           return;
+    }
+
+    for(i=0;i<a.size();i++)
+    {
+        w[n]=a[i];
+        l=n+1;
+        fun(a,w,l);
+    }
+}
+int main()
+{
+    int m,n,l;
+    string s="AFIN",k;
+    cin>>m>>l;
+    while(m>0)
+    {
+        k=k+" ";
+        m--;
+    }
+    fun(s,k,0);
+    cout<<sum<<" "<<o;
+}
